@@ -92,15 +92,22 @@ npm run build
 
 ## Configuration
 
-### EmailJS
+### Environment Variables
 
-Update credentials in `src/constants.js`:
+All secrets are stored in environment variables. Copy `.env.example` to `.env.local` and fill in your values — this file is gitignored and never committed.
 
-```js
-export const EMAIL_JS_SERVICE_ID = 'your_service_id';
-export const EMAIL_JS_TEMPLATE_ID = 'your_template_id';
-export const EMAIL_JS_PUBLIC_KEY  = 'your_public_key';
+```bash
+cp .env.example .env.local
 ```
+
+```env
+REACT_APP_EMAILJS_SERVICE_ID=
+REACT_APP_EMAILJS_TEMPLATE_ID=
+REACT_APP_EMAILJS_PUBLIC_KEY=
+REACT_APP_GITHUB_TOKEN=
+```
+
+**For Netlify deployment**, add the same variables in your Netlify dashboard under **Site Settings → Environment Variables**.
 
 ### Netlify Forms
 
@@ -114,11 +121,7 @@ The GitHub username is set in `src/components/Projects.jsx`:
 const GITHUB_USER = 'sameetpathan';
 ```
 
-> **Note:** The GitHub API token is currently hardcoded in `Projects.jsx`. For production, move it to a `.env` file:
-> ```
-> REACT_APP_GITHUB_TOKEN=your_token_here
-> ```
-> Then reference it as `process.env.REACT_APP_GITHUB_TOKEN`.
+The GitHub token is optional but recommended — it raises the API rate limit from 60 to 5,000 requests/hour. Generate one at [github.com/settings/tokens](https://github.com/settings/tokens) with `public_repo` scope.
 
 ---
 

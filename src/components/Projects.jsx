@@ -120,9 +120,8 @@ const Projects = () => {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const headers = {
-          Authorization: `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`,
-        };
+        const token = process.env.REACT_APP_GITHUB_TOKEN;
+        const headers = token ? { Authorization: `token ${token}` } : {};
 
         const reposRes = await fetch(
           `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=30`,
