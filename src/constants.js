@@ -1,94 +1,139 @@
-
-export const services = [
-    {
-        title: "Technology Enthusiast",
-        icon: 'https://csgeeek.github.io/web.png',
-    },
-    {
-        title: "Software Engineer",
-        icon: 'https://csgeeek.github.io/web.png',
-    },
-    {
-        title: "Traveller",
-        icon: 'https://csgeeek.github.io/web.png',
-    },
-];
-
 export const name = 'Sameet';
 
-export const experiences = [
-    {
-        'company': 'ScriptAnalytica Technologies Private Limited',
-        'role': 'Software Developer',
-        'duration': 'June 2023 - Present',
-        'logo': 'script_analytica_logo.jpg', // Replace with the actual logo URL
-        'points': [
-            'Developing Financial Audit Software: Specializing in financial audit systems, specifically 401(k) platforms, ensuring compliance, data accuracy, and seamless user experience.',
-            'Expert in Full-Stack Development: Leveraging C#, ASP.NET, ReactJS, Python, and Syncfusion to deliver robust backend solutions and interactive user interfaces.',
-            'Cloud Solutions with AWS: Architecting scalable and secure cloud infrastructures using AWS services to enhance application performance and reliability.',
-            'AI Prompt Engineering: Utilizing Anthropic AI for innovative prompt engineering, creating intelligent, adaptive solutions in natural language processing.',
-            'Collaboration & Agile Development: Working in cross-functional teams, using agile methodologies to accelerate project delivery and improve software quality.'
-        ]
-    },
-    {
-        'company': 'ScriptAnalytica Technologies Private Limited',
-        'role': 'Full Stack Developer Intern',
-        'duration': 'February 2023 - June 2023',
-        'logo': 'script_analytica_logo.jpg', // Replace with the actual logo URL
-        'points': [
-            'Assisting in Developing Financial Audit Software: Contributing to financial audit systems, particularly 401(k) platforms, by supporting compliance checks, data accuracy processes, and enhancing the user experience.',
-            'Supporting Full-Stack Development: Collaborating on backend solutions using C#, ASP.NET, and Python, as well as building interactive user interfaces with ReactJS and Syncfusion.',
-            'Learning Cloud Solutions with AWS: Gaining hands-on experience in designing secure and scalable cloud infrastructure to improve application performance, using various AWS services.',
-            'Contributing to AI Prompt Engineering: Assisting with Anthropic AI-based prompt engineering, working on creating intelligent, adaptive solutions in natural language processing.',
-            'Agile Development in Cross-Functional Teams: Actively participating in agile development environments, working closely with teams to enhance project delivery and maintain high software quality.'
-        ]
-    },
-    {
-        'company': 'Magna International',
-        'role': 'Software Developer',
-        'duration': 'July 2022 - January 2023',
-        'logo': 'https://imgs.search.brave.com/wAJrPHXuC6BhPqkeazDgOZgGlbUn6h51aPOAOqg8OEA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi82LzYzL01h/Z25hX2xvZ28uc3Zn/LzIyMHB4LU1hZ25h/X2xvZ28uc3ZnLnBu/Zw', // Replace with the actual logo URL
-        'points': [
-            'Contributed to the development of enterprise software solutions, enhancing business processes and ensuring code quality.',
-            'Worked closely with cross-functional teams to design, develop, and implement new software modules for increased efficiency and performance.',
-            'Assisted in the implementation of robust data management systems, ensuring data integrity and compliance across projects.'
-        ]
-    },
-    {
-        'company': 'Pimpri Chinchwad Education Trust',
-        'role': 'Web Development Intern',
-        'duration': 'September 2021 - May 2022',
-        'logo': 'https://imgs.search.brave.com/2IQa98J_YoJGdFgiciZw9wR7mai46gzSWZYKXkEK6qw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8wLzAwL1BD/Q09FLUxvZ28tMjQu/cG5nLzUxMnB4LVBD/Q09FLUxvZ28tMjQu/cG5n', // Replace with the actual logo URL
-        'points': [
-            'Developed and maintained web applications, improving user experience and ensuring compatibility across various devices.',
-            'Collaborated with the development team to implement front-end features using HTML, CSS, and JavaScript.',
-            'Gained experience in responsive web design and back-end support using PHP and MySQL.'
-        ]
-    },
-    {
-        'company': 'Pantechelearning',
-        'role': 'Deep Learning Using PyTorch',
-        'duration': 'August 2021 - September 2021',
-        'logo': 'https://pantechelearning.com/wp-content/uploads/2024/09/pantechlogo.png', // Replace with the actual logo URL
-        'points': [
-            'Completed hands-on projects utilizing PyTorch for deep learning models, focusing on computer vision and natural language processing tasks.',
-            'Gained proficiency in neural networks, backpropagation, and optimization techniques, implementing real-world projects.'
-        ]
-    },
-    {
-        'company': 'Sunbridge Software Services Inc | Microsoft Dynamics 365 Partner',
-        'role': 'Microsoft Dynamics AX 2012 , X++ Intern',
-        'duration': 'May 2019 - June 2019',
-        'logo': 'https://sunbridgeglobal.com/wp-content/uploads/2021/10/Logo-Color.png', // Replace with the actual logo URL
-        'points': [
-            'Worked on Microsoft Dynamics AX 2012 and gained hands-on experience with X++ programming language.',
-            'Contributed to the development and customization of Dynamics 365 solutions to meet client needs.'
-        ]
-    }
+export const roles = [
+  'Lead Software Engineer',
+  'Full Stack Developer',
+  'AI Integration Expert',
+  'React.js Developer',
 ];
 
+export const services = [
+  {
+    title: 'Full Stack Development',
+    icon: '⚡',
+    description: 'End-to-end solutions with C#, ASP.NET, React.js, Node.js, and Python.',
+  },
+  {
+    title: 'AI Integration',
+    icon: '🤖',
+    description: 'Intelligent automation using Anthropic Claude and AWS Textract for financial document processing.',
+  },
+  {
+    title: 'Cloud Architecture',
+    icon: '☁️',
+    description: 'Scalable AWS infrastructures with S3, EC2, Lambda, DynamoDB, and more.',
+  },
+];
 
+export const skills = [
+  { label: 'C#', color: 'bg-purple-500/15 text-purple-300 border-purple-500/30' },
+  { label: 'ASP.NET', color: 'bg-purple-500/15 text-purple-300 border-purple-500/30' },
+  { label: 'Python', color: 'bg-blue-500/15 text-blue-300 border-blue-500/30' },
+  { label: 'JavaScript', color: 'bg-yellow-500/15 text-yellow-300 border-yellow-500/30' },
+  { label: 'TypeScript', color: 'bg-blue-600/15 text-blue-300 border-blue-600/30' },
+  { label: 'React.js', color: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30' },
+  { label: 'Redux.js', color: 'bg-purple-600/15 text-purple-300 border-purple-600/30' },
+  { label: 'Node.js', color: 'bg-green-500/15 text-green-300 border-green-500/30' },
+  { label: 'Express.js', color: 'bg-gray-500/15 text-gray-300 border-gray-500/30' },
+  { label: 'PHP', color: 'bg-indigo-500/15 text-indigo-300 border-indigo-500/30' },
+  { label: 'AWS S3/EC2', color: 'bg-orange-500/15 text-orange-300 border-orange-500/30' },
+  { label: 'AWS Lambda', color: 'bg-orange-500/15 text-orange-300 border-orange-500/30' },
+  { label: 'AWS Textract', color: 'bg-orange-500/15 text-orange-300 border-orange-500/30' },
+  { label: 'DynamoDB', color: 'bg-orange-600/15 text-orange-300 border-orange-600/30' },
+  { label: 'MySQL', color: 'bg-sky-500/15 text-sky-300 border-sky-500/30' },
+  { label: 'MongoDB', color: 'bg-green-600/15 text-green-300 border-green-600/30' },
+  { label: 'Firebase', color: 'bg-yellow-600/15 text-yellow-300 border-yellow-600/30' },
+  { label: 'Anthropic Claude', color: 'bg-rose-500/15 text-rose-300 border-rose-500/30' },
+  { label: 'Prompt Engineering', color: 'bg-rose-500/15 text-rose-300 border-rose-500/30' },
+  { label: 'Solidity', color: 'bg-gray-600/15 text-gray-300 border-gray-600/30' },
+  { label: 'Web3', color: 'bg-violet-500/15 text-violet-300 border-violet-500/30' },
+  { label: 'React Native', color: 'bg-cyan-600/15 text-cyan-300 border-cyan-600/30' },
+  { label: 'Git / CI/CD', color: 'bg-red-500/15 text-red-300 border-red-500/30' },
+  { label: 'Agile / Scrum', color: 'bg-teal-500/15 text-teal-300 border-teal-500/30' },
+];
 
+export const experiences = [
+  {
+    company: 'Autire Technologies, LLC',
+    role: 'Lead Software Engineer',
+    duration: 'Apr 2026 – Present',
+    logo: 'https://ui-avatars.com/api/?name=AT&background=7c3aed&color=fff&size=128',
+    url: '',
+    points: [
+      'Spearhead engineering of Employee Benefit Plan (EBP) audit software covering 401(k), 403(b), and ESOP platforms, ensuring regulatory compliance and seamless UX.',
+      'Architect and deliver full-stack solutions using C#, ASP.NET, React.js, Redux.js, Python, Node.js, and Syncfusion components across complex financial audit workflows.',
+      'Design and integrate AI-powered features using Anthropic Claude for intelligent automation, NLP, and smarter audit decision support.',
+      'Build scalable, secure cloud architectures on AWS (S3, EC2, Lambda, Textract) to support high-performance financial applications.',
+      'Lead cross-functional engineering teams, enforce best practices, and drive agile delivery to consistently ship production-quality software.',
+    ],
+    tags: ['C#', 'ASP.NET', 'React.js', 'Python', 'AWS', 'Anthropic Claude'],
+  },
+  {
+    company: 'Priro Systems, Inc',
+    role: 'Software Engineer III',
+    duration: 'Aug 2025 – Mar 2026',
+    logo: 'https://ui-avatars.com/api/?name=PS&background=0891b2&color=fff&size=128',
+    url: '',
+    points: [
+      'Promoted to SE III within project Autire; continued development of 401(k) audit compliance platform with expanded scope in system design and AI integrations.',
+      'Led implementation of AI-driven data extraction pipelines using AWS Textract and Anthropic Claude, reducing manual review workload and improving accuracy.',
+      'Contributed to microservices architecture design and containerized deployment for secure financial data migration across clients.',
+    ],
+    tags: ['AWS Textract', 'Anthropic Claude', 'Microservices', 'Node.js', 'React.js'],
+  },
+  {
+    company: 'ScriptAnalytica Technologies Pvt. Ltd',
+    role: 'Software Engineer II',
+    duration: 'Jun 2023 – Aug 2025',
+    logo: 'script_analytica_logo.jpg',
+    url: '',
+    points: [
+      'Developed end-to-end AI-powered data extraction solution processing 600+ page PDF Form 5500 documents using AWS Textract and Anthropic Claude with chunking strategies and confidence scoring.',
+      'Built automated AI-driven Excel data verification tool that reduced manual verification time by 70% and improved financial reporting accuracy.',
+      'Created .NET-based dynamic Word document generation system with React.js interface, implementing bookmark replacement algorithms for real-time template population.',
+      'Engineered AI-powered Condition Library that generates dynamic Python scripts from user queries to analyze large financial datasets.',
+      'Contributed to authoring and validation workflows for 401(k), ESOP, and 403(b) plans.',
+    ],
+    tags: ['C#', 'ASP.NET', 'React.js', 'Python', 'AWS Textract', 'Syncfusion'],
+  },
+  {
+    company: 'ScriptAnalytica Technologies Pvt. Ltd',
+    role: 'Software Engineer Intern',
+    duration: 'Feb 2023 – Jun 2023',
+    logo: 'script_analytica_logo.jpg',
+    url: '',
+    points: [
+      'Assisted in developing financial audit software for 401(k) platforms, supporting compliance checks, data accuracy processes, and UI enhancements.',
+      'Built RESTful APIs using Node.js and Python; developed interactive frontend components with React.js, Redux, and Syncfusion.',
+      'Gained hands-on experience with AWS cloud infrastructure (DynamoDB, S3) and Anthropic AI-based prompt engineering.',
+    ],
+    tags: ['React.js', 'Node.js', 'Python', 'AWS DynamoDB', 'Redux'],
+  },
+  {
+    company: 'Magna International',
+    role: 'Software Developer Intern',
+    duration: 'Jul 2022 – Jan 2023',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Magna_logo.svg/220px-Magna_logo.svg.png',
+    url: '',
+    points: [
+      'Contributed to software automation projects using C#, C++, and .NET, improving development efficiency and code quality.',
+      'Worked closely with cross-functional teams to design and implement new software modules.',
+    ],
+    tags: ['C#', 'C++', '.NET', 'Automation'],
+  },
+  {
+    company: 'Pimpri Chinchwad Education Trust',
+    role: 'Web Development Intern',
+    duration: 'Sep 2021 – May 2022',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/PCCOE-Logo-24.png/512px-PCCOE-Logo-24.png',
+    url: '',
+    points: [
+      'Developed web applications using PHP, JavaScript, and Git as part of a structured institutional internship program.',
+      'Collaborated on responsive web design and back-end support using PHP and MySQL.',
+    ],
+    tags: ['PHP', 'JavaScript', 'MySQL', 'HTML/CSS'],
+  },
+];
 
 export const EMAIL_JS_SERVICE_ID = 'service_90wb9t5';
 export const EMAIL_JS_TEMPLATE_ID = 'template_8l87rew';

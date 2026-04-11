@@ -1,60 +1,188 @@
 import React from 'react';
-import '../App.css';
-import { services } from '../constants';
-import ButtonLink from './ButtonLink';
+import { motion } from 'framer-motion';
+import { FiDownload, FiAward, FiBriefcase, FiCode } from 'react-icons/fi';
+import { services, skills } from '../constants';
 import Footer from './Footer';
 
-const ServiceCard = ({ service }) => (
-  <div className='sm:w-[250px] w-full'>
-    <div
-      className='w-full green-pink-gradient p-[1px] rounded-[20px]'>
-      <div
-        className='rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-        style={{ background: '#151030' }}>
-        <img
-          src={service.icon}
-          alt='some_icon'
-          className='w-16 h-16 object-contain'
-        />
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {service.title}
-        </h3>
-      </div>
-    </div>
-  </div>
-);
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+const stats = [
+  { icon: FiBriefcase, value: '3+', label: 'Years Experience' },
+  { icon: FiCode, value: '15+', label: 'Projects Delivered' },
+  { icon: FiAward, value: '6+', label: 'Companies Worked' },
+];
+
+const serviceIcons = ['⚡', '🤖', '☁️'];
 
 const About = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col">
+      {/* ── Dot Grid ── */}
+      <div className="absolute inset-0 dot-grid pointer-events-none opacity-60" />
 
-    <div className='bg-black h-full w-full text-white sm:flex sm:justify-around about py-12 mt-8 overflow-x-hidden' id='about'>
-      <div className='flex flex-col justify-around'>
-        <div className='sm:px-16 px-2'>
-          <h2 className='text-4xl sm:text-5xl font-extrabold mt-2'>Introduction</h2>
-          <p className='mt-3 mb-6 text-[17px] max-w-3xl leading-[30px]'>👨‍💻 Hi, I'm Pathan Sameet, a 2023 graduate🎓
-          with a passion for crafting robust Full Stack systems. As a seasoned
-           <a className='text-green-300 hover:text-green-500 duration-300' href='https://www.linkedin.com/in/sameetpathan' target='_blank'> Software developer, I specialize in ReactJS, HTML, CSS, JavaScript, MySQL, Firebase, C#, ASP.NET, Python, Blockchain, Solidity, NodeJS, and AWS🚀.</a>
-          <br/>
-          I work on the UI side with ReactJS and handle the backend with ASP.NET, C#, Python, and NodeJS. I also have experience with databases like AWS DynamoDB, Firebase, and MySQL, as well as cloud services through AWS. ✍️ Beyond coding, I love to learn new things and am a fast learner. On a different note, I'm also into traveling✈️. It's not just a hobby; I see it as a way to explore new cultures and gain fresh perspectives🌍.</p>
+      <div className="relative z-10 flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 section-padding">
+        {/* ── Section Header ── */}
+        <motion.div
+          className="mb-16 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeUp}
+        >
+          <span className="section-tag">About Me</span>
+          <h2
+            className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mt-2"
+            style={{ fontFamily: 'Poppins, sans-serif' }}
+          >
+            Who I{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-cyan-500">
+              Am
+            </span>
+          </h2>
+        </motion.div>
 
-          <ButtonLink
-            url='https://drive.google.com/file/d/1b_6NPLvcoOBPxj3SVfJM7BdzsA_BcLpZ/view?usp=sharing'
-            text='View Resume →'
-            padding={`p-3`}
-          />
+        {/* ── Two Columns: Bio + Skills ── */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
+          {/* Bio */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeUp}
+          >
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
+              Hi! I'm{' '}
+              <span className="text-violet-600 dark:text-violet-400 font-semibold">Pathan Sameet</span>
+              , a Lead Software Engineer with 3+ years of experience crafting full-stack applications
+              and AI-powered financial audit systems for Employee Benefit Plans (401k, 403b, ESOP).
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
+              I specialize in building end-to-end solutions with{' '}
+              <span className="text-cyan-600 dark:text-cyan-400 font-medium">C#, ASP.NET, React.js,</span> and{' '}
+              <span className="text-cyan-600 dark:text-cyan-400 font-medium">Python</span>, deploying
+              on{' '}
+              <span className="text-orange-500 font-medium">AWS</span>, and integrating intelligent
+              automation with{' '}
+              <span className="text-rose-500 font-medium">Anthropic Claude</span>.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-8">
+              Beyond code, I'm a fast learner who loves exploring new technologies and traveling ✈️ —
+              gaining fresh perspectives that fuel creative problem-solving.
+            </p>
 
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              {stats.map(({ icon: Icon, value, label }, i) => (
+                <motion.div
+                  key={label}
+                  custom={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="glass rounded-2xl p-4 text-center border border-gray-100 dark:border-gray-800 hover-lift"
+                >
+                  <Icon className="text-violet-500 text-lg mx-auto mb-1" />
+                  <p className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    {value}
+                  </p>
+                  <p className="text-xs text-gray-500 dark:text-gray-500 font-medium">{label}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.a
+              href="https://drive.google.com/file/d/1DximknHDszoxlNlK9I_ctB0a8wvBIIk-/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold text-sm shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-shadow"
+            >
+              <FiDownload /> View Resume
+            </motion.a>
+          </motion.div>
+
+          {/* Skills */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeUp}
+            custom={1}
+          >
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-5">
+              Technologies & Tools
+            </h3>
+            <div className="flex flex-wrap gap-2.5">
+              {skills.map((skill, i) => (
+                <motion.span
+                  key={skill.label}
+                  custom={i}
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.8 },
+                    visible: (i) => ({
+                      opacity: 1,
+                      scale: 1,
+                      transition: { delay: i * 0.03, duration: 0.35 },
+                    }),
+                  }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.08, y: -2 }}
+                  className={`skill-tag border ${skill.color}`}
+                >
+                  {skill.label}
+                </motion.span>
+              ))}
+            </div>
+          </motion.div>
         </div>
-        <div className='mt-20 flex justify-center flex-wrap gap-7'>
-          {services.map((service) => (
-            <ServiceCard service={service} />
+
+        {/* ── Service Cards ── */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.12 } },
+          }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {services.map((service, i) => (
+            <motion.div
+              key={service.title}
+              variants={fadeUp}
+              custom={i}
+              whileHover={{ y: -6 }}
+              className="glass rounded-2xl p-6 border border-gray-100 dark:border-gray-800 gradient-border group cursor-default"
+            >
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 border border-violet-500/20 flex items-center justify-center text-2xl mb-4 group-hover:from-violet-500/30 group-hover:to-cyan-500/30 transition-all duration-300">
+                {serviceIcons[i]}
+              </div>
+              <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                {service.title}
+              </h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                {service.description}
+              </p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
+
+      <Footer />
     </div>
-    <Footer/>
-    </div>
-  )
-}
+  );
+};
 
 export default About;

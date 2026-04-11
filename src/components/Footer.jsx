@@ -1,33 +1,53 @@
 import React from 'react';
-import { FaGithub, FaTwitter } from 'react-icons/fa';
-import { AiFillMediumCircle, AiFillLinkedin } from 'react-icons/ai';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
+const socials = [
+  { icon: FiMail, href: 'mailto:sameetpathanrs@gmail.com', label: 'Email' },
+  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sameetpathan', label: 'LinkedIn' },
+  { icon: FaGithub, href: 'https://github.com/sameetpathan', label: 'GitHub' },
+];
 
 const Footer = () => {
-	const year = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
-	return (
-		<div className='bg-slate-900 p-4' style={{ cursor: 'default' }}>
-			<div className='flex justify-between flex-wrap gap-4'>
-				<p className='text-white text-center w-full sm:w-auto font-light'>© {year} Sameet. All rights reserved.</p>
-				<div className='text-white flex justify-around sm:w-[250px] w-full'>
-					
-					<a href="mailto:sameetpathanrs@gmail.com" className='transition ease-in-out duration-300 rounded-md hover:scale-110 cursor-pointer hover:-translate-y-1' style={{ cursor: 'pointer' }}>
-						<FiMail className='text-xl' />
-					</a>
-					
-					<a href="https://www.linkedin.com/in/sameetpathan" target='_blank' className='transition ease-in-out duration-300 rounded-md hover:scale-110 cursor-pointer hover:-translate-y-1' style={{ cursor: 'pointer' }}>
-						<AiFillLinkedin className='text-xl' />
-					</a>
-					<a href="https://github.com/sameetpathan" target='_blank' className='transition ease-in-out duration-300 rounded-md hover:scale-110 cursor-pointer hover:-translate-y-1' style={{ cursor: 'pointer' }} >
-						<FaGithub className='text-xl' />
-					</a>
-					
-				</div>
-			</div>	
-		</div>
-	);
-}
+  return (
+    <footer className="relative border-t border-gray-800 dark:border-gray-800 border-gray-200 bg-white dark:bg-gray-950">
+      {/* Top gradient line */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Left */}
+        <div className="flex items-center gap-2">
+          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center">
+            <span className="text-white font-bold text-xs" style={{ fontFamily: 'Poppins, sans-serif' }}>SP</span>
+          </div>
+          <p className="text-sm text-gray-500 dark:text-gray-500">
+            © {year} Sameet Pathan. All rights reserved.
+          </p>
+        </div>
+
+        {/* Right: Social Links */}
+        <div className="flex items-center gap-3">
+          {socials.map(({ icon: Icon, href, label }) => (
+            <motion.a
+              key={label}
+              href={href}
+              target={label !== 'Email' ? '_blank' : undefined}
+              rel="noopener noreferrer"
+              aria-label={label}
+              whileHover={{ scale: 1.15, y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-9 h-9 rounded-xl border border-gray-700 dark:border-gray-700 border-gray-200 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-violet-400 hover:border-violet-500/50 hover:bg-violet-500/8 dark:hover:bg-violet-500/10 transition-all duration-200"
+            >
+              <Icon className="text-sm" />
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
