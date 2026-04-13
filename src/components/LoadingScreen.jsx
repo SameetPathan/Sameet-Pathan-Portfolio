@@ -45,7 +45,7 @@ const LoadingScreen = ({ onComplete }) => {
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           >
             <span className="text-white font-bold text-3xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              SP
+              AM
             </span>
           </motion.div>
           {/* Spinning ring */}
@@ -64,7 +64,7 @@ const LoadingScreen = ({ onComplete }) => {
           transition={{ delay: 0.3 }}
           className="text-gray-400 text-sm tracking-[0.25em] uppercase font-medium"
         >
-          Sameet Pathan
+          Amin Mutawlli
         </motion.p>
 
         {/* Progress bar */}

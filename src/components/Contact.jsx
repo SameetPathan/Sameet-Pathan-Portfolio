@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FiSend, FiMail, FiMapPin, FiLinkedin, FiGithub, FiUser, FiMessageSquare } from 'react-icons/fi';
+import { FiSend, FiMail, FiMapPin, FiLinkedin, FiPhone, FiUser, FiMessageSquare } from 'react-icons/fi';
 import { EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, EMAIL_JS_PUBLIC_KEY } from '../constants';
 import Footer from './Footer';
 
@@ -11,8 +11,14 @@ const contactInfo = [
   {
     icon: FiMail,
     label: 'Email',
-    value: 'sameetpathanrs@gmail.com',
-    href: 'mailto:sameetpathanrs@gmail.com',
+    value: 'amin.mutawlli@hotmail.com',
+    href: 'mailto:amin.mutawlli@hotmail.com',
+  },
+  {
+    icon: FiPhone,
+    label: 'Mobile',
+    value: '+91 87930 88930',
+    href: 'tel:+918793088930',
   },
   {
     icon: FiMapPin,
@@ -23,14 +29,8 @@ const contactInfo = [
   {
     icon: FiLinkedin,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/sameetpathan',
-    href: 'https://www.linkedin.com/in/sameetpathan',
-  },
-  {
-    icon: FiGithub,
-    label: 'GitHub',
-    value: 'github.com/sameetpathan',
-    href: 'https://github.com/sameetpathan',
+    value: 'linkedin.com/in/amin-mutawlli',
+    href: 'https://www.linkedin.com/in/amin-mutawlli',
   },
 ];
 
@@ -83,9 +83,9 @@ const Contact = () => {
         EMAIL_JS_TEMPLATE_ID,
         {
           from_name: name.trim(),
-          to_name: 'Sameet Pathan',
+          to_name: 'Amin Mutawlli',
           reply_to: email.trim(),
-          to_email: 'sameetpathanrs@gmail.com',
+          to_email: 'amin.mutawlli@hotmail.com',
           message: message.trim(),
         },
         EMAIL_JS_PUBLIC_KEY
@@ -109,7 +109,6 @@ const Contact = () => {
     <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col">
       <div className="absolute inset-0 dot-grid pointer-events-none opacity-60" />
 
-      {/* Background orb */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="orb w-96 h-96 bottom-0 left-1/4 bg-violet-600/15 dark:bg-violet-600/10" style={{ animationDelay: '2s' }} />
       </div>
@@ -139,7 +138,7 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* ── Left: Contact Info ── */}
+          {/* Contact Info */}
           <div className="lg:col-span-2 flex flex-col gap-4">
             {contactInfo.map(({ icon: Icon, label, value, href }, i) => (
               <motion.div
@@ -160,7 +159,7 @@ const Contact = () => {
                   {href ? (
                     <a
                       href={href}
-                      target={label !== 'Email' ? '_blank' : undefined}
+                      target={label === 'LinkedIn' ? '_blank' : undefined}
                       rel="noopener noreferrer"
                       className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-violet-500 dark:hover:text-violet-400 transition-colors"
                     >
@@ -174,7 +173,7 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* ── Right: Form ── */}
+          {/* Form */}
           <motion.div
             className="lg:col-span-3"
             initial={{ opacity: 0, y: 30 }}
@@ -195,6 +194,7 @@ const Contact = () => {
                 {/* Netlify hidden fields */}
                 <input type="hidden" name="form-name" value="contact" />
                 <input type="hidden" name="bot-field" />
+
                 {/* Name */}
                 <div>
                   <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">
@@ -207,7 +207,7 @@ const Contact = () => {
                       name="name"
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="Sameet Pathan"
+                      placeholder="John Doe"
                       required
                       className="w-full pl-10 pr-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500/40 transition-all"
                     />
@@ -245,7 +245,7 @@ const Contact = () => {
                       value={form.message}
                       onChange={handleChange}
                       rows={5}
-                      placeholder="Hi Sameet, I'd love to discuss..."
+                      placeholder="Hi Amin, I'd love to discuss..."
                       required
                       className="w-full pl-10 pr-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white text-sm placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500/40 transition-all resize-none"
                     />

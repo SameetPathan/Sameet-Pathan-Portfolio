@@ -1,12 +1,11 @@
 import React from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 const socials = [
-  { icon: FiMail, href: 'mailto:sameetpathanrs@gmail.com', label: 'Email' },
-  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sameetpathan', label: 'LinkedIn' },
-  { icon: FaGithub, href: 'https://github.com/sameetpathan', label: 'GitHub' },
+  { icon: FiMail, href: 'mailto:amin.mutawlli@hotmail.com', label: 'Email' },
+  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/amin-mutawlli', label: 'LinkedIn' },
 ];
 
 const Footer = () => {
@@ -14,21 +13,18 @@ const Footer = () => {
 
   return (
     <footer className="relative border-t border-gray-800 dark:border-gray-800 border-gray-200 bg-white dark:bg-gray-950">
-      {/* Top gradient line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Left */}
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center">
-            <span className="text-white font-bold text-xs" style={{ fontFamily: 'Poppins, sans-serif' }}>SP</span>
+            <span className="text-white font-bold text-xs" style={{ fontFamily: 'Poppins, sans-serif' }}>AM</span>
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-500">
-            © {year} Sameet Pathan. All rights reserved.
+            © {year} Amin Mutawlli. All rights reserved.
           </p>
         </div>
 
-        {/* Right: Social Links */}
         <div className="flex items-center gap-3">
           {socials.map(({ icon: Icon, href, label }) => (
             <motion.a

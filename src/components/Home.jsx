@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
+import { FiArrowRight, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { roles } from '../constants';
 import Footer from './Footer';
@@ -18,7 +18,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
 };
 
-const techStack = ['C#', 'ASP.NET', 'React.js', 'Python', 'AWS', 'Anthropic Claude'];
+const techStack = ['C#', '.NET Core', 'Azure', 'Microservices', 'ReactJS', 'SQL Server', 'Docker', 'Blockchain'];
 
 const Home = () => {
   const [displayText, setDisplayText] = useState('');
@@ -52,26 +52,17 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen bg-white dark:bg-gray-950 overflow-hidden flex flex-col">
-      {/* ── Background Orbs ── */}
+      {/* Background Orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="orb w-[500px] h-[500px] top-[-100px] left-[-100px] bg-violet-600/25 dark:bg-violet-600/20"
-          style={{ animationDelay: '0s' }}
-        />
-        <div
-          className="orb w-[400px] h-[400px] bottom-[10%] right-[-80px] bg-cyan-500/20 dark:bg-cyan-500/15"
-          style={{ animationDelay: '3s' }}
-        />
-        <div
-          className="orb w-[300px] h-[300px] top-[40%] right-[30%] bg-pink-500/10 dark:bg-pink-500/8"
-          style={{ animationDelay: '5s' }}
-        />
+        <div className="orb w-[500px] h-[500px] top-[-100px] left-[-100px] bg-violet-600/25 dark:bg-violet-600/20" style={{ animationDelay: '0s' }} />
+        <div className="orb w-[400px] h-[400px] bottom-[10%] right-[-80px] bg-cyan-500/20 dark:bg-cyan-500/15" style={{ animationDelay: '3s' }} />
+        <div className="orb w-[300px] h-[300px] top-[40%] right-[30%] bg-pink-500/10 dark:bg-pink-500/8" style={{ animationDelay: '5s' }} />
       </div>
 
-      {/* ── Dot Grid ── */}
+      {/* Dot Grid */}
       <div className="absolute inset-0 dot-grid pointer-events-none" />
 
-      {/* ── Hero Content ── */}
+      {/* Hero Content */}
       <div className="relative z-10 flex-1 flex items-center justify-center px-4 sm:px-6 pt-20 pb-8">
         <motion.div
           className="max-w-4xl w-full mx-auto text-center"
@@ -79,15 +70,15 @@ const Home = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Status Badge */}
+          {/* Badge */}
           <motion.div variants={itemVariants} className="flex justify-center mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-600 dark:text-violet-400 text-xs font-semibold tracking-wide">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Open to new opportunities
+              18+ Years of Enterprise Experience
             </span>
           </motion.div>
 
-          {/* Main Heading */}
+          {/* Heading */}
           <motion.h1
             variants={itemVariants}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-5 text-gray-900 dark:text-white"
@@ -95,7 +86,7 @@ const Home = () => {
           >
             Hi, I'm{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-purple-500 to-cyan-500">
-              Sameet Pathan
+              Amin Mutawlli
             </span>
           </motion.h1>
 
@@ -119,16 +110,14 @@ const Home = () => {
             variants={itemVariants}
             className="text-base sm:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
-            3+ years building scalable full-stack applications and AI-powered financial audit systems
-            for 401(k), 403(b), and ESOP platforms. Passionate about turning complex problems
-            into elegant, high-performance solutions.
+            Senior Architect at Icertis with 18+ years designing enterprise-grade contract intelligence,
+            ESOP, and project management platforms. Expert in{' '}
+            <span className="text-violet-500 dark:text-violet-400">.NET, Azure,</span> and{' '}
+            <span className="text-cyan-500 dark:text-cyan-400">Microservices</span> at scale.
           </motion.p>
 
           {/* Tech Stack Pills */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-2 justify-center mb-10"
-          >
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-2 justify-center mb-10">
             {techStack.map((tech) => (
               <span
                 key={tech}
@@ -140,10 +129,7 @@ const Home = () => {
           </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-4 justify-center mb-12"
-          >
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center mb-12">
             <Link to="/projects">
               <motion.button
                 whileHover={{ scale: 1.04, y: -2 }}
@@ -154,24 +140,22 @@ const Home = () => {
               </motion.button>
             </Link>
 
-            <motion.a
-              href="https://drive.google.com/file/d/1DximknHDszoxlNlK9I_ctB0a8wvBIIk-/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:border-violet-500/50 hover:text-violet-600 dark:hover:text-violet-400 hover:bg-violet-500/5 transition-all duration-200"
-            >
-              <FiDownload /> Download CV
-            </motion.a>
+            <Link to="/contact">
+              <motion.button
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold text-sm hover:border-violet-500/50 hover:text-violet-600 dark:hover:text-violet-400 hover:bg-violet-500/5 transition-all duration-200"
+              >
+                <FiMail /> Get In Touch
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Social Icons */}
           <motion.div variants={itemVariants} className="flex gap-3 justify-center">
             {[
-              { icon: FiGithub, href: 'https://github.com/sameetpathan', label: 'GitHub' },
-              { icon: FiLinkedin, href: 'https://www.linkedin.com/in/sameetpathan', label: 'LinkedIn' },
-              { icon: FiMail, href: 'mailto:sameetpathanrs@gmail.com', label: 'Email' },
+              { icon: FiLinkedin, href: 'https://www.linkedin.com/in/amin-mutawlli', label: 'LinkedIn' },
+              { icon: FiMail, href: 'mailto:amin.mutawlli@hotmail.com', label: 'Email' },
             ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={label}
@@ -190,7 +174,7 @@ const Home = () => {
         </motion.div>
       </div>
 
-      {/* ── Scroll Indicator ── */}
+      {/* Scroll Indicator */}
       <motion.div
         className="flex justify-center pb-8 relative z-10"
         initial={{ opacity: 0 }}

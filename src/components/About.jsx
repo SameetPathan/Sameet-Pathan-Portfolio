@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiDownload, FiAward, FiBriefcase, FiCode } from 'react-icons/fi';
+import { FiBriefcase, FiAward, FiCode } from 'react-icons/fi';
 import { services, skills } from '../constants';
 import Footer from './Footer';
 
@@ -14,21 +14,20 @@ const fadeUp = {
 };
 
 const stats = [
-  { icon: FiBriefcase, value: '3+', label: 'Years Experience' },
-  { icon: FiCode, value: '15+', label: 'Projects Delivered' },
-  { icon: FiAward, value: '6+', label: 'Companies Worked' },
+  { icon: FiBriefcase, value: '18+', label: 'Years Experience' },
+  { icon: FiCode, value: '10+', label: 'Enterprise Projects' },
+  { icon: FiAward, value: '15+', label: 'Industry Awards' },
 ];
 
-const serviceIcons = ['⚡', '🤖', '☁️'];
+const serviceIcons = ['🏗️', '☁️', '👥'];
 
 const About = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col">
-      {/* ── Dot Grid ── */}
       <div className="absolute inset-0 dot-grid pointer-events-none opacity-60" />
 
       <div className="relative z-10 flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 section-padding">
-        {/* ── Section Header ── */}
+        {/* Section Header */}
         <motion.div
           className="mb-16 text-center"
           initial="hidden"
@@ -48,7 +47,7 @@ const About = () => {
           </h2>
         </motion.div>
 
-        {/* ── Two Columns: Bio + Skills ── */}
+        {/* Two Columns: Bio + Skills */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
           {/* Bio */}
           <motion.div
@@ -57,24 +56,29 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeUp}
           >
-            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-5">
               Hi! I'm{' '}
-              <span className="text-violet-600 dark:text-violet-400 font-semibold">Pathan Sameet</span>
-              , a Lead Software Engineer with 3+ years of experience crafting full-stack applications
-              and AI-powered financial audit systems for Employee Benefit Plans (401k, 403b, ESOP).
+              <span className="text-violet-600 dark:text-violet-400 font-semibold">Amin M. Mutawlli</span>
+              , a Senior Architect with{' '}
+              <span className="text-cyan-600 dark:text-cyan-400 font-medium">18+ years</span> of experience
+              delivering enterprise-grade software across contract intelligence, ESOP management, and
+              portfolio project management domains.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
-              I specialize in building end-to-end solutions with{' '}
-              <span className="text-cyan-600 dark:text-cyan-400 font-medium">C#, ASP.NET, React.js,</span> and{' '}
-              <span className="text-cyan-600 dark:text-cyan-400 font-medium">Python</span>, deploying
-              on{' '}
-              <span className="text-orange-500 font-medium">AWS</span>, and integrating intelligent
-              automation with{' '}
-              <span className="text-rose-500 font-medium">Anthropic Claude</span>.
+            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-5">
+              Currently at{' '}
+              <span className="text-violet-600 dark:text-violet-400 font-semibold">Icertis Solutions</span>,
+              I architect scalable systems using{' '}
+              <span className="text-cyan-600 dark:text-cyan-400 font-medium">.NET Core, Azure, Microservices,
+              Blockchain,</span> and <span className="text-cyan-600 dark:text-cyan-400 font-medium">Elastic Search</span>.
+              I have hands-on experience with SaaS, PaaS, and IaaS on Azure, and deep expertise in
+              SSO with SAML, Redis Cache, and CI/CD pipelines.
             </p>
             <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-8">
-              Beyond code, I'm a fast learner who loves exploring new technologies and traveling ✈️ —
-              gaining fresh perspectives that fuel creative problem-solving.
+              Over my career I've led teams of{' '}
+              <span className="text-violet-600 dark:text-violet-400 font-medium">19+ engineers</span>, designed
+              layered MVC architectures for 4+ enterprise platforms, and received{' '}
+              <span className="text-cyan-600 dark:text-cyan-400 font-medium">15+ industry awards</span> for
+              customer centricity, technical excellence, and commitment to delivery.
             </p>
 
             {/* Stats */}
@@ -99,14 +103,12 @@ const About = () => {
             </div>
 
             <motion.a
-              href="https://drive.google.com/file/d/1DximknHDszoxlNlK9I_ctB0a8wvBIIk-/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:amin.mutawlli@hotmail.com"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-semibold text-sm shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-shadow"
             >
-              <FiDownload /> View Resume
+              Get In Touch
             </motion.a>
           </motion.div>
 
@@ -147,15 +149,12 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* ── Service Cards ── */}
+        {/* Service Cards */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.12 } },
-          }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service, i) => (

@@ -47,11 +47,11 @@ const Navbar = () => {
             <Link to="/" className="flex items-center gap-2.5 group">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 flex items-center justify-center shadow-md shadow-violet-500/30 group-hover:shadow-violet-500/50 transition-shadow">
                 <span className="text-white font-bold text-sm" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                  SP
+                  AM
                 </span>
               </div>
               <span className="font-bold text-gray-900 dark:text-white hidden sm:block" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Sameet<span className="text-violet-500"> Pathan</span>
+                Amin<span className="text-violet-500"> Mutawlli</span>
               </span>
             </Link>
 
